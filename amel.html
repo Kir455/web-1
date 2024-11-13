@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>amel</title>
+    <style>
+        :root {
+            --blue-rgb: 92 192 249;
+            --green-rgb: 125 161 35;
+            --brown-rgb: 127 46 23;
+        }
+
+        html, body {
+            background-color: rgb(133, 12, 12);
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            transition: background-color 1000ms;
+        }
+
+        header {
+            background-color: #bbb2b2;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            color: rgb(53, 52, 52);
+        }
+
+        nav.topnav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        nav.topnav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav.topnav a:hover {
+            background-color: #575757;
+        }
+
+        footer {
+            background-color: #bbb2b2;
+            color: rgb(53, 52, 52);
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        #cards {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 20px;
+        }
+
+        .card {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            transition: scale 100ms;
+        }
+
+        .card .card-front-image {
+            position: relative;
+            z-index: 2;
+        }
+
+        .card .card-image {
+            width: clamp(300px, 20vw, 500px);
+            aspect-ratio: 2 / 3;
+            border-radius: clamp(0.5rem, 0.75vw, 2rem);
+        }
+
+        .card-faders {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 1500ms;
+            pointer-events: none;
+        }
+
+        .card:hover .card-faders {
+            opacity: 1;
+        }
+
+        .card:active {
+            scale: 0.98;
+        }
+
+        .card-fader {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        .card-fader:nth-child(odd) {
+            animation: fade-left 3s linear infinite;
+        }
+
+        .card-fader:nth-child(even) {
+            animation: fade-right 3s linear infinite;
+        }
+
+        .card-fader:is(:nth-child(3), :nth-child(4)) {
+            animation-delay: 750ms;
+        }
+
+        .card-fader:is(:nth-child(5), :nth-child(6)) {
+            animation-delay: 1500ms;
+        }
+
+        .card-fader:is(:nth-child(7), :nth-child(8)) {
+            animation-delay: 2250ms;
+        }
+
+        @media (max-width: 1200px) {
+            body {
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            #cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 4rem;
+                padding: 4rem;
+            }
+
+            .card .card-image {
+                width: 400px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #cards {
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .card {
+                width: 80%;
+            }
+
+            .card .card-image {
+                width: 100%;
+            }
+        }
+
+        @keyframes fade-left {
+            from {
+                scale: 1;
+                translate: 0%;
+                opacity: 1;
+            }
+
+            to {
+                scale: 0.8;
+                translate: -30%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fade-right {
+            from {
+                scale: 1;
+                translate: 0%;
+                opacity: 1;
+            }
+
+            to {
+                scale: 0.8;
+                translate: 30%;
+                opacity: 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome To Amel Husband Page</h1>
+    </header>
+    
+    <nav class="topnav">
+      <a href="https://callofduty.fandom.com/wiki/Russell_Adler">Home</a>
+      <a href="https://callofduty.fandom.com/wiki/Russell_Adler">Husband</a>
+      <a href="https://callofduty.fandom.com/wiki/Russell_Adler">Boyfriend</a>
+      <a href="https://callofduty.fandom.com/wiki/Russell_Adler">Darling</a>
+    </nav>
+    
+    <div id="cards">
+      <div class="card" data-color="blue">
+        <img
+          class="card-front-image card-image"
+          src="adler 1.jpg"
+        />
+        <div class="card-faders">
+          <img
+            class="card-fader card-image"
+            src="adler 1.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 1.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 1.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 1.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 1.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 1.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 1.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 1.jpg"
+          />
+        </div>
+      </div>
+      <div class="card" data-color="green">
+        <img
+          class="card-front-image card-image"
+          src="adler 2.jpg"
+        />
+        <div class="card-faders">
+          <img
+            class="card-fader card-image"
+            src="adler 2.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 2.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 2.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 2.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 2.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 2.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 2.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 2.jpg"
+          />
+        </div>
+      </div>
+      <div class="card" data-color="brown">
+        <img
+          class="card-front-image card-image"
+          src="adler 3.jpg"
+        />
+        <div class="card-faders">
+          <img
+            class="card-fader card-image"
+            src="adler 3.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 3.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 3.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 3.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 3.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 3.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 3.jpg"
+          />
+          <img
+            class="card-fader card-image"
+            src="adler 3.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <p>&copy; 2024 Amel. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
